@@ -1,0 +1,5 @@
+<auth>
+    <provider>oidc</provider>
+    <issuer>https://login.example.com</issuer>
+    <token-ttl>3600</token-ttl>
+</auth>

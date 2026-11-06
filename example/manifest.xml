@@ -1,0 +1,28 @@
+<root>
+    <file file="policies/app.xml"/>
+
+    <network>
+        <file file="network/listeners.xml" unwrap="true"/>
+        <file file="network/tls.xml"/>
+    </network>
+
+    <security>
+        <file file="security/auth.xml"/>
+        <file file="security/roles.xml"/>
+    </security>
+
+    <services>
+        <file file="services/database.xml"/>
+        <file file="services/cache.xml"/>
+        <file file="services/messaging.xml"/>
+    </services>
+
+    <features>
+        <file file="features/flags.xml" unwrap="true"/>
+    </features>
+
+    <logging>
+        <file file="logging/appenders.xml" unwrap="true"/>
+        <file file="logging/loggers.xml" unwrap="true"/>
+    </logging>
+</root>

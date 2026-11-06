@@ -1,0 +1,10 @@
+<roles>
+    <role name="admin">
+        <permission>read</permission>
+        <permission>write</permission>
+        <permission>manage-users</permission>
+    </role>
+    <role name="viewer">
+        <permission>read</permission>
+    </role>
+</roles>

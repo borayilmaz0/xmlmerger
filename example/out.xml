@@ -1,0 +1,92 @@
+<root>
+    <app>
+        <name>demo-service</name>
+        <version>2.4.1</version>
+        <environment>production</environment>
+    </app>
+    <network>
+        <listener name="public">
+            <port>443</port>
+            <timeout>30</timeout>
+        </listener>
+        <listener name="internal">
+            <port>9090</port>
+        </listener>
+        <listener name="metrics">
+            <port>9100</port>
+            <timeout>5</timeout>
+        </listener>
+        <tls>
+            <min-version>1.2</min-version>
+            <certificate>/etc/certs/server.pem</certificate>
+            <key>/etc/certs/server.key</key>
+        </tls>
+    </network>
+    <security>
+        <auth>
+            <provider>oidc</provider>
+            <issuer>https://login.example.com</issuer>
+            <token-ttl>3600</token-ttl>
+        </auth>
+        <roles>
+            <role name="admin">
+                <permission>read</permission>
+                <permission>write</permission>
+                <permission>manage-users</permission>
+            </role>
+            <role name="viewer">
+                <permission>read</permission>
+            </role>
+        </roles>
+    </security>
+    <services>
+        <database>
+            <engine>postgres</engine>
+            <host>db.internal</host>
+            <pools>
+                <pool name="read">
+                    <size>20</size>
+                    <retry>
+                        <max-attempts>3</max-attempts>
+                        <backoff-ms>200</backoff-ms>
+                    </retry>
+                </pool>
+                <pool name="write">
+                    <size>5</size>
+                    <retry>
+                        <max-attempts>3</max-attempts>
+                        <backoff-ms>200</backoff-ms>
+                    </retry>
+                </pool>
+            </pools>
+        </database>
+        <cache>
+            <backend>redis</backend>
+            <ttl>300</ttl>
+            <retry>
+                <max-attempts>3</max-attempts>
+                <backoff-ms>200</backoff-ms>
+            </retry>
+        </cache>
+        <messaging>
+            <broker>amqp://mq.internal:5672</broker>
+            <queues>
+        123
+    </queues>
+        </messaging>
+    </services>
+    <features>
+        <flag name="new-checkout" enabled="true"/>
+        <flag name="beta-search" enabled="false"/>
+        <flag name="dark-mode" enabled="true"/>
+    </features>
+    <logging>
+        <appender name="console" type="stdout"/>
+        <appender name="file" type="rolling">
+            <path>/var/log/demo-service.log</path>
+            <max-size-mb>100</max-size-mb>
+        </appender>
+        <logger name="root" level="INFO" appender="console"/>
+        <logger name="db" level="WARN" appender="file"/>
+    </logging>
+</root>

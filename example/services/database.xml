@@ -1,0 +1,8 @@
+<database>
+    <engine>postgres</engine>
+    <host>db.internal</host>
+    <pools>
+        <file file="../policies/read.xml"/>
+        <file file="../policies/write.xml"/>
+    </pools>
+</database>

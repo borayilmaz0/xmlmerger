@@ -1,0 +1,4 @@
+<logger-list>
+    <logger name="root" level="INFO" appender="console"/>
+    <logger name="db" level="WARN" appender="file"/>
+</logger-list>

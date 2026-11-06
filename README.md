@@ -105,3 +105,4 @@ If a real config element could be named `file`, rename the placeholder
 - Validation is not included. To add it, call `schema.assertValid(root)` on the
   result of `assemble()`, using your XSD.
 - `--annotate` changes the output document. Use it for debugging only.
+- command to run example: ```python xml_assemble.py example/manifest.xml -o example/out.xml```

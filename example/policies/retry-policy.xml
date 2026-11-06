@@ -1,0 +1,4 @@
+<retry>
+    <max-attempts>3</max-attempts>
+    <backoff-ms>200</backoff-ms>
+</retry>

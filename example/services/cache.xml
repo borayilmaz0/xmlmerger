@@ -1,0 +1,5 @@
+<cache>
+    <backend>redis</backend>
+    <ttl>300</ttl>
+    <file file="../policies/retry-policy.xml"/>
+</cache>

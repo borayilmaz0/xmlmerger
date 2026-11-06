@@ -1,0 +1,6 @@
+<messaging>
+    <broker>amqp://mq.internal:5672</broker>
+    <queues>
+        123
+    </queues>
+</messaging>

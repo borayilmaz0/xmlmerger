@@ -1,0 +1,4 @@
+<pool name="read">
+    <size>20</size>
+    <file file="retry-policy.xml"/>
+</pool>

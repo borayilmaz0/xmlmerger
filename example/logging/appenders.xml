@@ -1,0 +1,7 @@
+<appender-list>
+    <appender name="console" type="stdout"/>
+    <appender name="file" type="rolling">
+        <path>/var/log/demo-service.log</path>
+        <max-size-mb>100</max-size-mb>
+    </appender>
+</appender-list>

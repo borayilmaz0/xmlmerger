@@ -1,0 +1,4 @@
+<pool name="write">
+    <size>5</size>
+    <file file="retry-policy.xml"/>
+</pool>

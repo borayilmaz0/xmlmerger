@@ -1,0 +1,5 @@
+<queue-list>
+    <queue name="orders"><workers>8</workers></queue>
+    <queue name="emails"><workers>2</workers></queue>
+    <queue name="audit"><workers>1</workers></queue>
+</queue-list>

@@ -1,0 +1,13 @@
+<listeners>
+    <listener name="public">
+        <port>443</port>
+        <timeout>30</timeout>
+    </listener>
+    <listener name="internal">
+        <port>9090</port>
+    </listener>
+    <listener name="metrics">
+        <port>9100</port>
+        <timeout>5</timeout>
+    </listener>
+</listeners>

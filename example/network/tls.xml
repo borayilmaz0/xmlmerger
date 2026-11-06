@@ -1,0 +1,5 @@
+<tls>
+    <min-version>1.2</min-version>
+    <certificate>/etc/certs/server.pem</certificate>
+    <key>/etc/certs/server.key</key>
+</tls>
